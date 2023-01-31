@@ -1,15 +1,13 @@
 <?php
     session_start();
 
-    $_SESSION['lenght'] = $_GET['lenght'];
-    $password = $_SESSION['password'] ;
-
-
-    if(empty($_SESSION['lenght'])){
-        header('Location: ./index.php');
-    }
-
+    // $_SESSION['lenght'] = $_GET['lenght'];
     var_dump($_SESSION);
+
+    // if(empty($_SESSION['lenght'])){
+    //     header('Location: ./index.php');
+    // }
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +21,7 @@
     </head>
     <body>
         <div class="container mt-5">
-            <input class="form-control" type="text" value="<?php echo $password; ?>" disabled readonly>
+            <input class="form-control" type="text" value="<?php echo $_SESSION['password']; ?>" disabled readonly>
         </div>
     </body>
 </html>
