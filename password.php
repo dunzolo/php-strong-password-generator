@@ -1,13 +1,5 @@
 <?php
-    session_start();
-
-    // $_SESSION['lenght'] = $_GET['lenght'];
-    var_dump($_SESSION);
-
-    // if(empty($_SESSION['lenght'])){
-    //     header('Location: ./index.php');
-    // }
-
+    session_start();  
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +13,7 @@
     </head>
     <body>
         <div class="container mt-5">
+            <h1 class="text-center">Password generata:</h1>
             <input class="form-control" type="text" value="<?php echo $_SESSION['password']; ?>" disabled readonly>
         </div>
     </body>

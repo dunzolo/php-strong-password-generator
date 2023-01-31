@@ -1,11 +1,6 @@
 <?php
     session_start();
 
-    // ini_set('display_errors', 1);
-    // ini_set('display_startup_errors', 1);
-    // error_reporting(E_ALL);
-
-    
     include __DIR__ . '/partials/functions.php';
 
     $password = "";
@@ -16,7 +11,10 @@
     }
 
     $_SESSION['password'] = $password;
-    var_dump($_SESSION);
+
+    if($_SESSION['password'] && $_GET['lenght'] !== ''){
+        header('Location: ./password.php');
+    }
 
 ?>
 
@@ -32,8 +30,7 @@
     <body>
         <div class="container mt-5">
             <h1 class="text-center">Genera una password sicura</h1>
-            <!-- <input class="form-control" type="text" value="<?php //echo isset($password) ? $password : 'Password non generata'?>" disabled readonly> -->
-            <form action="./password.php" method="GET" class="row align-items-center mt-3">
+            <form action="./index.php" method="GET" class="row align-items-center mt-3">
                 <div class="col-auto">
                     <label for="input-lenght" class="form-label">Lunghezza della password</label>
                 </div>
