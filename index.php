@@ -2,17 +2,11 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+    
+    include __DIR__ . '/partials/functions.php';
 
     if(isset($_GET['lenght']) && $_GET['lenght'] !== ''){
-        $length = $_GET['lenght'];
-
-        $alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`-=~!@#$%^&*()_+,./<>?;:[]{}\|";
-        $password = "";
-
-        for ($i = 0; $i < $length; $i++) {
-            $char = rand(0, strlen($alphabet) - 1);
-            $password .= $alphabet[$char];
-        }
+        $password = generatePassword($_GET['lenght']);
     }
 ?>
 
